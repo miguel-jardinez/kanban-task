@@ -32,8 +32,6 @@ export const SideBard = () => {
     return path === normalizeUrl(name);
   };
 
-  console.log(isDark);
-
   return (
     <>
       <SideBarStyled isSideBarOpen={state.isSideBarOpen}>
