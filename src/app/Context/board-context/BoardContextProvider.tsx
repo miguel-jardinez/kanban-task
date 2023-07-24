@@ -4,7 +4,7 @@ import { BoardContext } from '@/app/Context/board-context/BoardContext';
 import React, { useEffect, useReducer } from 'react';
 import { initialState, reducer } from '@/app/Context/board-context/store/board-reducer';
 import { useRouter } from 'next/navigation';
-import {normalizeUrl} from "@/utils/normalize";
+import { normalizeUrl } from '@/utils/normalize';
 
 interface BoardContextProviderProps {
   children: React.ReactNode;

@@ -1,4 +1,4 @@
-import { ThemeEnumStorage } from '@/hooks/useLocalStorage/types/themeEnum';
+import { ThemeEnumStorage } from '@/utils/types/themeEnum';
 import { ThemeType } from '@/app/Context/theme-context/store/theme-reducer';
 
 interface TypeStorage {

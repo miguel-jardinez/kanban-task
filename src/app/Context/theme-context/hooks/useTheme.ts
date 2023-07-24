@@ -3,8 +3,8 @@
 import { useContext, useEffect, useState } from 'react';
 import { ThemeContext } from '@/app/Context/theme-context/ThemeContext';
 import { CHANGE_DARK_THEME, CHANGE_LIGHT_THEME } from '@/app/Context/theme-context/store/theme-types';
-import { getData } from '@/hooks/useLocalStorage/useLocalStorage';
-import { ThemeEnumStorage } from '@/hooks/useLocalStorage/types/themeEnum';
+import { getData } from '@/utils/useLocalStorage';
+import { ThemeEnumStorage } from '@/utils/types/themeEnum';
 import { ThemeType } from '@/app/Context/theme-context/store/theme-reducer';
 
 export const useTheme = () => {

@@ -2,8 +2,8 @@ import { ActionTypes } from '@/app/Context/theme-context/store/actions';
 import { CHANGE_LIGHT_THEME } from '@/app/Context/theme-context/store/theme-types';
 import { Theme } from '@/theme/theme/types/Theme';
 import { darkTheme, lightTheme } from '@/theme/theme/theme';
-import { setData } from '@/hooks/useLocalStorage/useLocalStorage';
-import { ThemeEnumStorage } from '@/hooks/useLocalStorage/types/themeEnum';
+import { setData } from '@/utils/useLocalStorage';
+import { ThemeEnumStorage } from '@/utils/types/themeEnum';
 
 export type ThemeType = 'light' | 'dark';
 

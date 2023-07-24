@@ -5,6 +5,7 @@ import { StyledComponentsRegistry } from '@/theme/StyledComponentsRegistry';
 import { ThemeContextProvider } from '@/app/Context/theme-context/ThemeContextProvider';
 import { GlobalStyles } from '@/theme/theme/GlobalStyles';
 import { BoardContextProvider } from '@/app/Context/board-context/BoardContextProvider';
+import { ModalContextProvider } from '@/app/Context/modal-context/ModalContextProvider';
 
 const inter = Plus_Jakarta_Sans({ subsets: ['latin'] });
 
@@ -23,9 +24,11 @@ const RootLayout = ({
       <StyledComponentsRegistry>
         <GlobalStyles />
         <BoardContextProvider>
-          <ThemeContextProvider>
-            {children}
-          </ThemeContextProvider>
+          <ModalContextProvider>
+            <ThemeContextProvider>
+              {children}
+            </ThemeContextProvider>
+          </ModalContextProvider>
         </BoardContextProvider>
       </StyledComponentsRegistry>
     </body>
