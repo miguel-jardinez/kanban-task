@@ -3,6 +3,7 @@ import { ButtonVariant } from '@/components/button/Button';
 
 interface ButtonStyledProps {
   variant: ButtonVariant;
+  fullWidth: boolean;
 }
 
 const getStyledOfButton = (variant: ButtonVariant, theme: DefaultTheme) => {
@@ -43,6 +44,7 @@ export const ButtonStyled = styled.button<ButtonStyledProps>`
   padding: ${({ theme, variant }) => getStyledOfButton(variant, theme).padding} 2rem;
   border-radius: 2.4rem;
   transition: background-color 150ms ease;
+  width: ${({ fullWidth }) => (fullWidth ? '100%' : 'initial')};
   
   &:hover {
     background-color: ${({ theme, variant }) => getStyledOfButton(variant, theme).hover};

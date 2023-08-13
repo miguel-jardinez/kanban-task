@@ -29,5 +29,5 @@ export const colors: Colors = {
   red: '#EA5555',
   redHover: '#FF9898',
   checkboxHover: '#D8D7F1',
-  border: '#E0E3E8',
+  border: '#414552',
 };

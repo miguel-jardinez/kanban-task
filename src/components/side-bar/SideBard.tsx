@@ -16,12 +16,15 @@ import { ImageEnum } from '@/utils/ImageEnum';
 import { ShowButton } from '@/components/side-bar/components/show-button';
 import { usePathname, useRouter } from 'next/navigation';
 import { normalizeUrl } from '@/utils/normalize';
+import { useModal } from '@/components/modal/hook/useModal';
+import { AddNewBoardForm } from '@/components/add-new-board-form';
 
 export const SideBard = () => {
   const router = useRouter();
   const pathName = usePathname();
   const { state, handleSideBarOpen } = useBoard();
   const { isDark } = useTheme();
+  const { openModal, ModalContainer } = useModal({ children: <AddNewBoardForm /> });
 
   const handleNavigate = (name: string) => {
     router.push(`/board/${normalizeUrl(name)}`);
@@ -34,6 +37,7 @@ export const SideBard = () => {
 
   return (
     <>
+      <ModalContainer />
       <SideBarStyled isSideBarOpen={state.isSideBarOpen}>
         <SideBarImage width={153} height={25} src={isDark ? ImageEnum.LOGO_WHITE : ImageEnum.LOGO_DARK} alt="Logo" />
         <BoardsContainer>
@@ -57,7 +61,7 @@ export const SideBard = () => {
               </ListItemContainer>
             ))
           }
-          <ListItemContainer>
+          <ListItemContainer onClick={openModal}>
             <SideBarImageListItem
               height={16}
               width={16}

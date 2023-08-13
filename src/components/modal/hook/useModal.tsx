@@ -1,19 +1,26 @@
 import { Modal } from '@/components/modal';
-import React, { JSX } from 'react';
-import { useModalProvider } from '@/app/Context/modal-context/hooks/useModalProvider';
+import React, { useState } from 'react';
 
 interface UseModalProps {
   children: React.ReactNode
 }
 
 export const useModal = ({ children }: UseModalProps) => {
-  const { openModal, closeModal, state } = useModalProvider();
+  const [handleModal, setHandleModal] = useState(false);
+
+  const openModal = () => {
+    setHandleModal(true);
+  };
+
+  const closeModal = () => {
+    setHandleModal(false);
+  };
 
   const ModalContainer = () => (
     <>
-      {state.open
+      {handleModal
           && (
-            <Modal>
+            <Modal closeModal={closeModal}>
               {children}
             </Modal>
           )}
@@ -24,6 +31,5 @@ export const useModal = ({ children }: UseModalProps) => {
     ModalContainer,
     openModal,
     closeModal,
-    state,
   };
 };

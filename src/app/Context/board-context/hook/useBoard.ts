@@ -24,6 +24,7 @@ export const useBoard = () => {
       payload: {
         id,
         name,
+        columns: [],
       },
     });
   };

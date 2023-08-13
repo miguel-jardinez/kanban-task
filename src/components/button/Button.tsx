@@ -8,10 +8,13 @@ interface ButtonProps {
   onClick?: () => void;
   children: React.ReactNode;
   variant: ButtonVariant;
+  fullWidth?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, onClick, variant }) => (
-  <ButtonStyled variant={variant} onClick={onClick}>
+export const Button: React.FC<ButtonProps> = ({
+  children, onClick, variant, fullWidth = false,
+}) => (
+  <ButtonStyled fullWidth={fullWidth} variant={variant} onClick={onClick}>
     <Typography variant={variant === 'primary' ? 'h3' : 'bodyL'}>{ children }</Typography>
   </ButtonStyled>
 );

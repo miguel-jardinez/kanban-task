@@ -7,17 +7,13 @@ interface TextFieldContainerProps {
 
 export const TextFieldContainer = styled.div<TextFieldContainerProps>`
   border: 0.1rem solid ${({ theme, isError }) => (!isError ? theme.colors.border : theme.colors.red)};
-  background-color: ${({ theme }) => theme.colors.white};
+  background-color: transparent;
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: ${({ theme }) => theme.spacing.lg};
+  margin-bottom: 1.2rem;
   height: 4rem;
-`;
-
-export const TextFieldLabel = styled.label`
-  display: block;
-  margin-bottom: ${({ theme }) => theme.spacing.sm};
+  border-radius: 0.4rem;
 `;
 
 export const TextFieldStyled = styled.input`
@@ -30,6 +26,7 @@ export const TextFieldStyled = styled.input`
   background-color: transparent;
   padding: ${({ theme }) => theme.spacing.sm} ${({ theme }) => theme.spacing.md};
   flex: 2;
+  color: ${({ theme }) => theme.colors.lines};
   
   &::placeholder {
     font-size: ${({ theme }) => theme.fonts.bodyL.size};

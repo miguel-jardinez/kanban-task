@@ -8,4 +8,5 @@ export enum ImageEnum {
   SHOW_SIDEBAR = '/images/icon-show-sidebar.svg',
   LOGO_DARK = '/images/logo-dark.svg',
   LOGO_WHITE = '/images/logo-light.svg',
+  CROSS = '/images/icon-cross.svg',
 }

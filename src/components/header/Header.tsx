@@ -15,7 +15,6 @@ export const Header = () => {
   const { isDark } = useTheme();
   const { state } = useBoard();
   const path = usePathname();
-
   const { ModalContainer, openModal } = useModal({ children: <h1>Hola mundo</h1> });
 
   return (

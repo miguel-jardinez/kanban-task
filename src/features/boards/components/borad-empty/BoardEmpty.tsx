@@ -3,7 +3,9 @@ import { Button } from '@/components/button';
 
 export const BoardEmpty = () => (
   <BoardEmptyStyled>
-    <BoardEmptyHeadLine variant="h2">This board is empty. Create a new column to get started.</BoardEmptyHeadLine>
+    <BoardEmptyHeadLine>
+      This board is empty. Create a new column to get started.
+    </BoardEmptyHeadLine>
     <Button variant="primary">+ Add New Column</Button>
   </BoardEmptyStyled>
 );

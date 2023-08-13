@@ -1,19 +1,18 @@
-import { ModalStyled, ModalDetails } from '@/components/modal/Modal.styled';
+import {ModalStyled, ModalDetails, ModalContainer} from '@/components/modal/Modal.styled';
 import React from 'react';
-import { useModalProvider } from '@/app/Context/modal-context/hooks/useModalProvider';
 
 interface ModalProps {
   children: React.ReactNode;
+  closeModal?: () => void;
 }
 
-export const Modal: React.FC<ModalProps> = ({ children }) => {
-  const { closeModal } = useModalProvider();
-
-  return (
-    <ModalStyled onClick={closeModal}>
+export const Modal: React.FC<ModalProps> = ({ children, closeModal }) => (
+  <>
+    <ModalStyled onClick={closeModal} />
+    <ModalContainer>
       <ModalDetails>
         {children}
       </ModalDetails>
-    </ModalStyled>
-  );
-};
+    </ModalContainer>
+  </>
+);

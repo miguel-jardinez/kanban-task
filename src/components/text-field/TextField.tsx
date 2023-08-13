@@ -1,40 +1,37 @@
 import {
   ErrorLabel,
   TextFieldContainer,
-  TextFieldLabel,
   TextFieldStyled,
 } from '@/components/text-field/TextField.styled';
 import React from 'react';
-import { Typography } from '@/components/typography';
+import { UseFormRegisterReturn } from 'react-hook-form';
 
 interface TextFieldProps {
-  value: string;
-  onChangeValue: (value: string) => void;
-  label: string;
   isError: boolean;
   placeholder: string
-  id: string
+  id: string;
+  register?: UseFormRegisterReturn<string>
+  value?: string;
+  disabled?: boolean;
 }
 
 export const TextField: React.FC<TextFieldProps> = ({
-  value,
-  onChangeValue,
-  label,
   isError,
   placeholder,
   id,
+  register,
+  value,
+  disabled = false,
 }) => (
   <>
-    <TextFieldLabel htmlFor={id}>
-      <Typography variant="body">{ label }</Typography>
-    </TextFieldLabel>
     <TextFieldContainer isError={isError}>
       <TextFieldStyled
+        {...register}
+        disabled={disabled}
         id={id}
-        value={value}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChangeValue(e.target.value)}
         placeholder={placeholder}
         type="text"
+        value={value}
       />
       {
         isError && <ErrorLabel>Can’t be empty</ErrorLabel>
