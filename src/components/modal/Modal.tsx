@@ -1,4 +1,4 @@
-import {ModalStyled, ModalDetails, ModalContainer} from '@/components/modal/Modal.styled';
+import { ModalStyled, ModalDetails, ModalContainer } from '@/components/modal/Modal.styled';
 import React from 'react';
 
 interface ModalProps {

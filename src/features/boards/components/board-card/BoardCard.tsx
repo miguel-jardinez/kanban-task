@@ -2,7 +2,7 @@ import React from 'react';
 import { Tasks } from '@/app/Context/board-context/store/board-reducer';
 import { BoardCardContainer } from '@/features/boards/components/board-card/boardCard.styled';
 import { Typography } from '@/components/typography';
-import {Spacing} from "@/components/spacing";
+import { Spacing } from '@/components/spacing';
 
 interface BoardCardProps {
   task: Tasks;
@@ -20,4 +20,4 @@ export const BoardCard: React.FC<BoardCardProps> = ({ task }) => {
       </Typography>
     </BoardCardContainer>
   );
-}
+};

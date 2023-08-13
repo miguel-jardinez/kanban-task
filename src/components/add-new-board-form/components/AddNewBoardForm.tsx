@@ -21,7 +21,7 @@ export const AddNewBoardForm = () => {
       <AddNewBoardFormTitle>Add new board</AddNewBoardFormTitle>
       <form onSubmit={onSubmit}>
         <Labels text="Board Name" id="board-name" />
-        <TextField register={...register('board')} placeholder="e.g. Web Design" id="board-name" isError={false}/>
+        <TextField register={...register('board')} placeholder="e.g. Web Design" id="board-name" isError={false} />
 
         <Labels text="Board Columns" id="columns-name" />
         {
